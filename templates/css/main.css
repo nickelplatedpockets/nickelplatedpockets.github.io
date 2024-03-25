@@ -3,7 +3,40 @@ body
 	max-width: 85ch;
 }
 
-p
+p, a
 {
 	max-width: 75ch;
+	font-family: "Cardo", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+h1, h2, h3
+{
+	font-family: "Cardo", serif;
+	font-weight: 700;
+	font-style: normal;
+}
+
+b
+{
+	font-family: "Cardo", serif;
+	font-weight: 700;
+	font-style: normal;
+}
+
+i
+{
+	font-family: "Cardo", serif;
+	font-weight: 400;
+	font-style: italic;
+}
+
+.button
+{
+	background-color: rgba(0, 0, 0, 1);
+	color: rgba(255, 255, 255, 1);
+	text-align: center;
+	text-decoration: none;
+	padding: 5px;
 }
