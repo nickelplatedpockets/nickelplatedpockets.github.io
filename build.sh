@@ -6,8 +6,8 @@ for _file in `find . -type f -name "*.md"`; do
 	file=`echo ${_file%.md}.html`
 	rm $file
 	touch $file
-	#pandoc --standalone --template "./templates/header.html" $_file >> $file
-	pandoc --standalone --template "./templates/debug_header.html" $_file >> $file
+	pandoc --standalone --template "./templates/header.html" $_file >> $file
+	#pandoc --standalone --template "./templates/debug_header.html" $_file >> $file
 	pandoc --standalone --template "./templates/content.html" $_file >> $file
 	pandoc --standalone --template "./templates/footer.html" $_file >> $file
 done
