@@ -6,9 +6,15 @@ for _file in `find . -type f -name "*.md"`; do
 	file=`echo ${_file%.md}.html`
 	rm $file
 	touch $file
+
 	pandoc --standalone --template "./templates/header.html" $_file >> $file
-	#pandoc --standalone --template "./templates/debug_header.html" $_file >> $file
-	pandoc --standalone --template "./templates/content.html" $_file >> $file
+	if [[ $_file == *"/posts/"* ]]; then
+		echo "${_file} contains posts"
+		pandoc --standalone --template "./templates/post.html" $_file >> $file
+	else
+		echo "${_file}"
+		pandoc --standalone --template "./templates/content.html" $_file >> $file
+	fi
 	pandoc --standalone --template "./templates/footer.html" $_file >> $file
 done
 
